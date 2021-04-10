@@ -1,0 +1,36 @@
+<% include ../partials/header %> 
+
+     <header class="jumbotron">
+         <div class="container text-center">
+             <h1>Welcome To Blog Site!</h1>
+             <p>View our hand-picked blog from all over the world</p>
+             <p>
+                <a class="btn btn-primary btn-lg" href="/blog/new">Add New blog <i class="far fa-edit"></i></a>
+             </p>
+              <p>
+              <form action="/blog" method="GET" class="form-inline" id="blog-search">
+                <div class="form-group">
+                  <input type="text" name="search" placeholder="blog search..." class="form-control">
+                </div>
+              </form>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row container text-center flex-wrap" id="blog-grid">
+        <% blog.forEach(function(blog){ %>
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                   <img style="height:300px" src="<%= blog.image %>">
+                   <div class="caption">
+                       <h4><%= blog.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/blog/<%= blog._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>

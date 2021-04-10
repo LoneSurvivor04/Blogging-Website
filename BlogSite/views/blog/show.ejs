@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+<div class="row">
+<div class="col-md-2">
+	</div>
+  <div class="col-md-8">
+    <div class="thumbnail">
+      <img class="img-responsive mt-1" style="margin-top: 3%; max-width:80%" src="<%= blog.image %>">
+      <div class="caption-full">
+        <h4><%=blog.name%></h4>
+        <p><%= blog.description %></p>
+        <p>
+          <em>Submitted by: <%= blog.author.username %>, <%= moment(blog.createdAt).fromNow() %></em>
+        </p>
+        <% if(currentUser && blog.author.id.equals(currentUser._id)){ %>
+        <a class="btn btn-warning" href="/blog/<%= blog._id %>/edit">Edit</a>
+        <form action="/blog/<%= blog._id %>?_method=DELETE" method="POST" class="delete-form">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+        <% } %>
+      </div>
+    </div>
+    <div class="well">
+      <div class="text-right">
+        <a class="btn btn-success" href="/blog/<%= blog._id %>/comments/new">Add New Comment</a>
+      </div>
+      <hr>
+      <% blog.comments.forEach(function(comment){ %>
+      <div class="row">
+        <div class="col-md-12">
+          <strong><%= comment.author.username %></strong>
+          <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+          <div>
+           <%= comment.text %> 
+
+           <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <div class="pull-right">
+              <a href="/blog/<%=blog._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">EDIT</a>
+              <form class="delete-form" action="/blog/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-xs btn-danger">DELETE</button>
+              </form>
+            </div>
+          <% } %>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+</div>
+<script>
+    var contentString =
+      <strong><%= blog.name %><br />
+      <%= blog.location %></strong>
+      <p><%= blog.description %></p>
+</script>
+<% include ../partials/footer %>

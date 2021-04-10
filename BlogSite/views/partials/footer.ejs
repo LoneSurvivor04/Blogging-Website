@@ -1,0 +1,62 @@
+        </div><!-- /.container -->
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">&copy; Blog Site  | <a href="/blog">Home</a> | <a href="/blog/new">New Blog</a> | <a href ="https://www.github.com/thelonewolff/BlogSIte" target="_blank">Git Repo</a> 
+				| <a><i onclick="mf()" class="fas fa-phone"></i></a>
+			  <span id="hello" class="hell">
+			  
+			  	  |<a class="beforeClick" href="tel:+91-8088194103"> 8088194103</a> 
+				  |<a class="beforeClick" href="tel:+91-8002452345"> 8002452345</a> 
+				  |<a class="beforeClick" href="tel:+91-8971345617"> 8971345617</a>
+			  </span> |
+			  <a><i onclick="mfn()" class="fas fa-envelope"></i></a>
+			  <span id="hemlob" class="hemlo">
+			  
+			  | <a class="beforeClick1" href="mailto:shahdanishhashmi@gmail.com"> shahdanishhashmi@gmail.com</a>
+			  | <a class="beforeClick1" href="mailto:itsatulanurag@gmail.com"> itsatulanurag@gmail.com</a>
+			  | <a class="beforeClick1" href="mailto:cagcs14@gmail.com"> cagcs14@gmail.com</a>
+			  </span>
+			  </p>
+          </div>
+        </footer>
+<style>
+	.hell{
+		display:none;
+	}
+	.hemlo{
+		display:none;
+	}
+</style>
+        <!-- jQuery CDN -->
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+        <!-- Custom JS for search feature -->
+        <script src="/scripts/search.js" async defer></script>
+        <!-- Bootstrap JS CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+	
+	function mf(){
+		// var p=document.getElementsByClassName("beforeClick");
+		// console.log(p);
+		// for(i=0;i<p.lenght;i++){
+		// 	console.log(p[i]);
+		// 	p[i].classList.remove(".beforeClick");
+		// }
+		var m=document.querySelector("#hello");
+		m.classList.toggle("hell");
+	}
+	
+	function mfn(){
+		// var p1=document.getElementsByClassName("beforeClick1");
+		// for(i=0;i<p1.lenght;i++){
+		// 	p1[i].classList.remove(".beforeClick1");
+		// }
+		var n=document.querySelector("#hemlob");
+		n.classList.toggle("hemlo");
+	}
+</script>
+    </body>
+</html>

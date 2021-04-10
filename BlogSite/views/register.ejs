@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+    <div class="row jumbotron" id="log">
+        <h1 style="text-align: center">Sign Up</h1>
+        <div style="width: 70%; margin: 25px auto;">
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="username">
+                </div>
+                <div class="form-group">
+                     <input class="form-control" type="password" name="password" pattern="(?=.*\d)(?=.*[@_])(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="format : 0-9 a-z A-Z @ _">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+                </div>
+            </form>
+            <a href="/blog">Go Back</a>
+        </div>
+    </div>
+
+<div id="mydiv">
+	<script type="text/babel">
+		class SignUp extends React.Component {
+		  render() {
+		    return (<div class="row jumbotron" id="log">
+        <h1 style="text-align: center">Sign Up</h1>
+        <div style="width: 70%; margin: 25px auto;">
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" pattern="(?=.*\d)(?=.*[@_])(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="format : 0-9 a-z A-Z @ _">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+                </div>
+            </form>
+            <a href="/blog">Go Back</a>
+        </div>
+    </div>)
+		  }
+		}
+		ReactDOM.render(<SignUp/>,document.getElementById("mydiv"));
+	</script>
+</div>
+<% include ./partials/footer %>
+
